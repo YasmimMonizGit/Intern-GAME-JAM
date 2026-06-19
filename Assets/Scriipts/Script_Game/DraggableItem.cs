@@ -8,15 +8,17 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
     private Vector3 startPosition;
 
+    public BeckerDropZone beckerZone;
+
     void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
         canvas = GetComponentInParent<Canvas>();
+        startPosition = transform.position;
     }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        startPosition = transform.position;
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -26,10 +28,8 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
     public void OnEndDrag(PointerEventData eventData)
     {
-    }
+        bool accepted = beckerZone.TryDrop(gameObject);
 
-    public void ResetPosition()
-    {
         transform.position = startPosition;
     }
 }

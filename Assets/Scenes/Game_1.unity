@@ -350,6 +350,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86e7fe5ae0d172f4aaa6430182744831, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DraggableItem
+  beckerZone: {fileID: 1908738955}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -575,6 +576,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86e7fe5ae0d172f4aaa6430182744831, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DraggableItem
+  beckerZone: {fileID: 1908738955}
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -824,6 +826,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86e7fe5ae0d172f4aaa6430182744831, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DraggableItem
+  beckerZone: {fileID: 1908738955}
 --- !u!1 &1331452366
 GameObject:
   m_ObjectHideFlags: 0
@@ -1080,7 +1083,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -1229,7 +1232,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1749954477}
-  - component: {fileID: 1749954478}
   - component: {fileID: 1749954479}
   - component: {fileID: 1749954480}
   m_Layer: 0
@@ -1254,24 +1256,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1749954478
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1749954475}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48772160d5f42fe4397398b6fbcac89b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Speak_manager
-  elements:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  nextSceneName: Menu
 --- !u!114 &1749954479
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1471,6 +1455,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86e7fe5ae0d172f4aaa6430182744831, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DraggableItem
+  beckerZone: {fileID: 1908738955}
 --- !u!1 &1908738951
 GameObject:
   m_ObjectHideFlags: 0
@@ -1560,6 +1545,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BeckerDropZone
   recipeManager: {fileID: 1749954480}
+  dropArea: {fileID: 1908738952}
   beckerPoint: {fileID: 1908738952}
 --- !u!1 &2130009778
 GameObject:

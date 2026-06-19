@@ -1,19 +1,31 @@
 using UnityEngine;
-using UnityEngine.EventSystems;
 
-public class BeckerDropZone : MonoBehaviour, IDropHandler
+public class BeckerDropZone : MonoBehaviour
 {
     public RecipeManager recipeManager;
+    public RectTransform dropArea;
     public Transform beckerPoint;
 
-    public void OnDrop(PointerEventData eventData)
+    public bool IsInsideBecker(RectTransform item)
     {
-        GameObject droppedItem = eventData.pointerDrag;
+        return RectTransformUtility.RectangleContainsScreenPoint(
+            dropArea,
+            item.position
+        );
+    }
 
-        if (droppedItem != null)
+    public bool TryDrop(GameObject item)
+    {
+        RectTransform itemRect = item.GetComponent<RectTransform>();
+
+        if (IsInsideBecker(itemRect))
         {
-            droppedItem.transform.position = beckerPoint.position;
-            recipeManager.AddItem(droppedItem);
+            recipeManager.AddItem(item);
+            Debug.Log("Item accepted");
+            return true;
         }
+
+        Debug.Log("Item outside becker");
+        return false;
     }
 }
