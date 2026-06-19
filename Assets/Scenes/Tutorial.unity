@@ -1837,7 +1837,7 @@ MonoBehaviour:
   - {fileID: 1031970531}
   - {fileID: 1683065066}
   - {fileID: 514330273}
-  nextSceneName: Menu
+  nextSceneName: Game_1
 --- !u!1 &1820638456
 GameObject:
   m_ObjectHideFlags: 0
