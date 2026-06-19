@@ -19,6 +19,10 @@ public class RecipeManager : MonoBehaviour
     [Header("Becker Liquid")]
     public Image beckerLiquid;
 
+    [Header("Audio")]
+    public AudioSource dropSound;
+    public AudioClip wrongCombinationClip;
+
     private List<GameObject> playerSequence = new List<GameObject>();
     private int currentStep = 0;
     private Color originalColor;
@@ -46,6 +50,10 @@ public class RecipeManager : MonoBehaviour
     public void AddItem(GameObject item)
     {
         playerSequence.Add(item);
+        if (dropSound != null)
+        {
+            dropSound.Play();
+        }
 
         ChangeLiquidColor();
 
@@ -98,6 +106,12 @@ public class RecipeManager : MonoBehaviour
         instructionText.text = failText;
 
         float timer = 0f;
+
+        if (dropSound != null && wrongCombinationClip != null)
+        {
+            dropSound.PlayOneShot(wrongCombinationClip);
+        }
+
 
         while (timer < 2f)
         {
