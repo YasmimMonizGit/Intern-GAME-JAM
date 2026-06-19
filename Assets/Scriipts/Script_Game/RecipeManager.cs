@@ -74,29 +74,34 @@ public class RecipeManager : MonoBehaviour
 
     void CheckFinalSequence()
     {
-        bool correct = true;
+        int mistakesThisRound = 0;
 
         for (int i = 0; i < steps.Length; i++)
         {
             if (playerSequence[i] != steps[i].correctItem)
             {
-                correct = false;
-                break;
+                mistakesThisRound++;
             }
         }
 
-        if (correct)
+        if (mistakesThisRound == 0)
         {
             instructionText.text = successText;
-            Debug.Log("SUCCESS");
 
             if (nextLevelButton != null)
             {
                 nextLevelButton.SetActive(true);
             }
+
+            Debug.Log("SUCCESS");
         }
         else
         {
+            for (int i = 0; i < mistakesThisRound; i++)
+            {
+                GameManager.Instance.AddMistake();
+            }
+
             StartCoroutine(FailSequence());
         }
     }
@@ -115,13 +120,15 @@ public class RecipeManager : MonoBehaviour
 
         while (timer < 2f)
         {
+            
+
             ChangeLiquidColor();
 
             yield return new WaitForSeconds(0.5f);
 
             timer += 0.5f;
         }
-
+       
         ResetRecipe();
     }
 

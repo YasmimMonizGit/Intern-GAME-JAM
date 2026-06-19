@@ -20,6 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Tutorial.unity
     guid: c1efe3a5dca331b40a9167b5fddd9463
+  - enabled: 1
+    path: Assets/Scenes/FiredBoard.unity
+    guid: 5af206af0181d7245b74c8ddea448a30
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
