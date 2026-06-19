@@ -953,7 +953,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Welcome to the Quimistry LabQ=!
+  m_text: Well then, welcome aboard! I suppose we can skip the formal tutorial...
+    after all, the best way to learn is by doing
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 297f0b3fe1752904aa8dc8dab9f1c0b9, type: 2}
   m_sharedMaterial: {fileID: 2909921586391674689, guid: 297f0b3fe1752904aa8dc8dab9f1c0b9, type: 2}
@@ -980,7 +981,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 66.7
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1349,7 +1350,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Welcome to the Quimistry LabQ=!
+  m_text: "The work here can be quite demanding... long hours, dangerous experiments,
+    and the occasional explosion. But don\u2019t worry! You\u2019ll learn a lot,
+    because I explain everything in great detail."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 297f0b3fe1752904aa8dc8dab9f1c0b9, type: 2}
   m_sharedMaterial: {fileID: 2909921586391674689, guid: 297f0b3fe1752904aa8dc8dab9f1c0b9, type: 2}
@@ -1376,7 +1379,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 51.5
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1667,7 +1670,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Welcome to the Quimistry LabQ=!
+  m_text: 'Ah, you must be the new intern! Welcome to my laboratory. '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 297f0b3fe1752904aa8dc8dab9f1c0b9, type: 2}
   m_sharedMaterial: {fileID: 2909921586391674689, guid: 297f0b3fe1752904aa8dc8dab9f1c0b9, type: 2}
@@ -1971,7 +1974,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Welcome to the Quimistry LabQ=!
+  m_text: Oh! My apologies, it seems I have an important call to take. Stay here
+    for a moment and try not to touch anything unstable.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 297f0b3fe1752904aa8dc8dab9f1c0b9, type: 2}
   m_sharedMaterial: {fileID: 2909921586391674689, guid: 297f0b3fe1752904aa8dc8dab9f1c0b9, type: 2}
@@ -1998,7 +2002,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 62.65
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2216,7 +2220,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2004245842
 RectTransform:
   m_ObjectHideFlags: 0
