@@ -1,20 +1,33 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class RecipeManager : MonoBehaviour
 {
+    [Header("Recipe Setup")]
     public RecipeStep[] steps;
+
+    [Header("UI")]
     public TextMeshProUGUI instructionText;
 
+    [Header("Feedback")]
     public string successText = "Perfect mixture!";
     public string failText = "Wrong formula!";
 
+    [Header("Becker Liquid")]
+    public Image beckerLiquid;
+
     private List<GameObject> playerSequence = new List<GameObject>();
     private int currentStep = 0;
+    private Color originalColor;
+
+    public GameObject nextLevelButton;
 
     void Start()
     {
+        originalColor = beckerLiquid.color;
         UpdateInstruction();
     }
 
@@ -33,8 +46,22 @@ public class RecipeManager : MonoBehaviour
     public void AddItem(GameObject item)
     {
         playerSequence.Add(item);
+
+        ChangeLiquidColor();
+
         currentStep++;
         UpdateInstruction();
+    }
+
+    void ChangeLiquidColor()
+    {
+        Color randomColor = new Color(
+            Random.value,
+            Random.value,
+            Random.value
+        );
+
+        beckerLiquid.color = randomColor;
     }
 
     void CheckFinalSequence()
@@ -54,11 +81,45 @@ public class RecipeManager : MonoBehaviour
         {
             instructionText.text = successText;
             Debug.Log("SUCCESS");
+
+            if (nextLevelButton != null)
+            {
+                nextLevelButton.SetActive(true);
+            }
         }
         else
         {
-            instructionText.text = failText;
-            Debug.Log("FAIL");
+            StartCoroutine(FailSequence());
         }
+    }
+
+    IEnumerator FailSequence()
+    {
+        instructionText.text = failText;
+
+        float timer = 0f;
+
+        while (timer < 2f)
+        {
+            ChangeLiquidColor();
+
+            yield return new WaitForSeconds(0.5f);
+
+            timer += 0.5f;
+        }
+
+        ResetRecipe();
+    }
+
+    void ResetRecipe()
+    {
+        playerSequence.Clear();
+        currentStep = 0;
+
+        beckerLiquid.color = originalColor;
+
+        UpdateInstruction();
+
+        Debug.Log("Recipe Reset");
     }
 }
