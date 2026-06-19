@@ -19,6 +19,10 @@ public class RecipeManager : MonoBehaviour
     [Header("Becker Liquid")]
     public Image beckerLiquid;
 
+    [Header("Effects")]
+    public GameObject successEffect;
+    public GameObject failEffect;
+
     [Header("Audio")]
     public AudioSource dropSound;
     public AudioClip wrongCombinationClip;
@@ -33,6 +37,12 @@ public class RecipeManager : MonoBehaviour
     {
         originalColor = beckerLiquid.color;
         UpdateInstruction();
+
+        if (successEffect != null)
+            successEffect.SetActive(false);
+
+        if (failEffect != null)
+            failEffect.SetActive(false);
     }
 
     void UpdateInstruction()
@@ -86,6 +96,7 @@ public class RecipeManager : MonoBehaviour
 
         if (mistakesThisRound == 0)
         {
+            StartCoroutine(ShowEffect(successEffect));
             instructionText.text = successText;
 
             if (nextLevelButton != null)
@@ -109,6 +120,7 @@ public class RecipeManager : MonoBehaviour
     IEnumerator FailSequence()
     {
         instructionText.text = failText;
+        StartCoroutine(ShowEffect(failEffect));
 
         float timer = 0f;
 
@@ -142,5 +154,16 @@ public class RecipeManager : MonoBehaviour
         UpdateInstruction();
 
         Debug.Log("Recipe Reset");
+    }
+    IEnumerator ShowEffect(GameObject effect)
+    {
+        if (effect != null)
+        {
+            effect.SetActive(true);
+
+            yield return new WaitForSeconds(1f);
+
+            effect.SetActive(false);
+        }
     }
 }
